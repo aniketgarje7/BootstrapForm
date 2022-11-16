@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React  from "react"
+import Child from './Component/Child'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import 'bootstrap/dist/css/bootstrap.min.css';
+class App extends React.Component{
+  constructor(props){
+    super(props)
+      this.state = {
+        count:0,
+        child:true
+      }
+
+    
+  }
+  render(){
+    return <>
+       <h1>APP</h1>
+       <h1>{this.state.count}</h1>
+       <button onClick={()=>{this.setState({count:8})}}>increament</button>
+       {this.state.child && <Child/>}
+        <button onClick={()=>{this.setState({child:!this.state.child})}}>willUnmoun</button>
+       </>
+    }
 }
 
-export default App;
+export default App
