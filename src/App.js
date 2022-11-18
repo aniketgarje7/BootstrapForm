@@ -1,14 +1,18 @@
-import React  from "react"
 
-import FormExample from "./Component/form";
-import 'bootstrap/dist/css/bootstrap.min.css';
+
+import RegistrationForm from "./Component/form";
+
 
  
 
     
   const App = ()=>{
-    return <div>aniket
-      <FormExample/>
+    const style = {marginLeft:'400px',color:'red'}
+    
+    return <div>
+      <h1 style={style}>Registration Form</h1>
+      <RegistrationForm />
+      
     </div>
         
   }
